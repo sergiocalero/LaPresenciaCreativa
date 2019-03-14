@@ -1,0 +1,48 @@
+Dimensiones de las imágenes:
+- Las imágenes del catálogo terminadas en (-t) tendrán un ancho de 293px x 220px alto
+- Las imágenes del Instagram terminadas en (-t) tendrán un ancho de 124px x ?? alto
+- Las imágenes del catálogo (zoom) terminadas en (t2) tendrán un ancho de: 652px x 489px alto
+
+Pasos para generar las imágenes y subirlas al servidor:
+	- Trabajo en el PC:
+		- Se abre la imagen con GIMP y se recorta el contorno total de las zapatillas.
+		- Se corta el cortorno y se pega en una imagen nueva con fondo blanco, que tendrá un alto mínimo de 489 px.
+		- Ésta imagen generada se guardará como imagen.xcf (donde imagen será el nombre original de la imágen).
+			- Se guardará en la carpeta del color correspondiente.
+		- Crearemos dos imágenes a partir de la imágen original.
+		- Una con alto 210px
+		- Otra con alto 470px
+		- La primera se pegará sobre la plantilla Plantilla-t.xcf (que está en el directorio: C:\wamp\www\la-presencia-creativa\img\alpargatas)
+		- La segunda se pegará sobre la plantilla Plantilla-t2.xcf
+		- La primera se exportará como imagen-t.jpg, al directorio del color correspondiente.
+		- La segunda se exportará como imagen-t2.jpg, al directorio del color correspondiente.
+		- Las nuevas imágenes generadas deberán estar en el directorio del color correspondiente.
+		
+	- Trabajo en el Servidor:
+		- Se subirán por FTP (Programa WinSCP) a la carpeta del color correspondiente en el servidor:
+			Ruta: /public_html/img/alpargatas/...
+		- Se creará una entrada nueva en el fichero /public_html/catalogo.json,
+		  La nueva entrada en la parte superior del fichero deberá tener el siguiente aspecto:
+		  
+			{
+			"title": "Modelo Flor del Pac&iacute;fico",
+			"url": "img/alpargatas/malva/imagen-t2.JPG",
+			"urlThumb": "img/alpargatas/malva/imagen-t.JPG",
+			"category": "Alpargatas",
+			"subcategory": "Malvas",
+			"price" : "15"
+		   },
+		   
+		   - Es importante mantener el nombre exacto en minúsculas o mayúsculas del nombre de la imágen,
+			 de otra forma no se mostrarán las imágenes en el catálogo.
+		   - subcategory es una de las siguientes: Azules, Rojos, Rosas, Malvas, Naranjas o Verdes
+		   - Si se incluyen acentos en el título de la imágen, se deberán sustituir por sus correspondientes códigos HTML:
+			   á equivale a: &aacute;
+			   é equivale a: &eacute;
+			   í equivale a: &iacute;
+			   ó equivale a: &oacute;
+			   ú equivale a: &uacute;
+			   ñ equivale a: &ntilde;
+			   
+			- Nota Importante: La estructura final del fichero catalogo.json es una lista de elementos con la siguiente estructura:
+				[{}, {}, {}, {}, ...]

@@ -1,0 +1,30 @@
+<div class="home-module home-featured-products rows-of-4">	
+	<div class="home-module-content">	
+		<h2>Otras Creatividades</h2>
+		
+		<div class="home-featured-products-list collection-products uniform-layout under-style" id="products_list"></div>
+		<!-- Las imágenes terminadas en (-t) tendrán un ancho de 293px -->
+		<script type="text/template" data-template="product">
+			<div class="product-list-item">
+				<figure class="product-list-item-thumbnail">
+					<a data-imagelightbox="f" href="{{urlImg}}">
+						<img src="{{urlThumb}}" alt="{{title}}" title="{{title}}">
+					</a>
+				</figure>
+				<div class="product-list-item-details">
+					<p class="product-list-item-vendor vendor meta">
+						<a href="#" title="{{title}}">{{title}}</a>
+					</p>
+					<h3 class="product-list-item-title">
+						<a href="#">{{subcategory}}</a>
+					</h3>
+					<p class="product-list-item-price">
+						<span class="price money">{{price}} &euro;</span>
+					</p>
+				</div>
+			</div>
+		</script>
+		<!-- home-featured-products-list -->
+		
+	</div>	<!-- home-module-content -->
+</div>	<!-- home-module home-featured-products rows-of-4 -->
